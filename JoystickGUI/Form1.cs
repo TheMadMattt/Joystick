@@ -39,6 +39,16 @@ namespace JoystickGUI
                 devicesList.Add(deviceInstance);
                 deviceInstanceList.Items.Add(deviceInstance.InstanceName);
             }
+
+            if (deviceInstanceList.Items.Count > 0)
+            {
+                button2.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button3.Enabled = false;
+            }
         }
 
         public void CaptureJoystick()
@@ -130,16 +140,26 @@ namespace JoystickGUI
             joystick.Properties.BufferSize = 128;
 
             joystick.Acquire();
+
+            button3.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = true;
             t = new System.Threading.Thread(CaptureJoystick);
             t.Start();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button4.Enabled = false;
+            button3.Enabled = true;
             t.Suspend();
         }
 
