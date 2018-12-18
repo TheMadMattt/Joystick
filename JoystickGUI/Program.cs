@@ -17,6 +17,7 @@ namespace JoystickGUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Environment.Exit(0);
         }
     }
 }
