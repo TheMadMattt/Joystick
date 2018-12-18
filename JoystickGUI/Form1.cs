@@ -20,11 +20,6 @@ namespace JoystickGUI
         Joystick joystick;
         List<DeviceInstance> devicesList = new List<DeviceInstance>();
 
-        public struct Point
-        {
-            public int x;
-            public int y;
-        }
         public Form1()
         {
             InitializeComponent();
