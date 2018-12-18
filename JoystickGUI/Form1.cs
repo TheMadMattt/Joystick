@@ -41,7 +41,7 @@ namespace JoystickGUI
             }
         }
 
-        public void klasa()
+        public void CaptureJoystick()
         {
             while (true)
             {
@@ -134,7 +134,7 @@ namespace JoystickGUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            t = new System.Threading.Thread(klasa);
+            t = new System.Threading.Thread(CaptureJoystick);
             t.Start();
         }
 
